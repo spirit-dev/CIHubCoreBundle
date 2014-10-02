@@ -17,5 +17,5 @@
         "psr-0": { "SpiritDev\\Bundle\\CIHubCoreBundle": "" }
     },
     "target-dir": "SpiritDev/Bundle/CIHubCoreBundle",
-    "minimum-stability": "dev",
+    "minimum-stability": "dev"
 }
