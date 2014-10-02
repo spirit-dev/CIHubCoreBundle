@@ -1,0 +1,22 @@
+{
+    "name": "spirit-dev/ci-hub-core-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 component suite, arrounding CI tools",
+    "keywords": ["Spirit-Dev", "CI", "Continuous", "Integration", "Jenkins"],
+    "license": "GPL-v2",
+    "authors": [
+        {
+            "name": "Jean Bordat",
+            "email": "bordat.jean@gmail.com",
+            "homepage": "http://jean.bordat.me/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "autoload": {
+        "psr-0": { "SpiritDev\\Bundle\\CIHubCoreBundle": "" }
+    },
+    "target-dir": "SpiritDev/Bundle/CIHubCoreBundle",
+    "minimum-stability": "dev"
+}
