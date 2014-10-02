@@ -19,7 +19,7 @@
     "target-dir": "SpiritDev/Bundle/CIHubCoreBundle",
     "extra": {
         "branch-alias": {
-            "dev-master": "0.x-dev"
+            "dev-master": "dev"
         }
     }
 }
