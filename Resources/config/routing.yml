@@ -1,0 +1,3 @@
+#spirit_dev_ci_hub_core_homepage:
+#    path:     /hello/{name}
+#    defaults: { _controller: CIHubPreBundle:Default:index }
