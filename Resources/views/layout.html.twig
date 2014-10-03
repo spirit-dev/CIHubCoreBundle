@@ -1,0 +1,72 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    {% if app.environment == 'prod' %}
+        {# TODO Définir le contenu en prod #}
+        {% stylesheets
+        'bundles/cihubcore/js/lib/bootstrap-3.2.0/css/bootstrap.min.css'
+        'bundles/cihubcore/js/lib/bootstrap-3.2.0/css/bootstrap-theme.min.css'
+        filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% else %}
+        {% stylesheets
+        'bundles/cihubcore/js/lib/bootstrap-3.2.0/css/bootstrap.css'
+        'bundles/cihubcore/js/lib/bootstrap-3.2.0/css/bootstrap-theme.css'
+        'bundles/cihubcore/css/common/main.css'
+        filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endif %}
+
+    {% block perso_css %}
+    {% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+    {% if app.environment == 'prod' %}
+        {# TODO Définir le contenu en prod #}
+        {% javascripts
+        '@CIHubCoreBundle/Resources/public/js/lib/jquery-1.11.1/jquery-1.11.1.min.js'
+        '@CIHubCoreBundle/Resources/public/js/lib/bootstrap-3.2.0/js/bootstrap.min.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% else %}
+        {% javascripts
+        '@CIHubCoreBundle/Resources/public/js/lib/jquery-1.11.1/jquery-1.11.1.js'
+        '@CIHubCoreBundle/Resources/public/js/lib/bootstrap-3.2.0/js/bootstrap.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endif %}
+
+    {% block perso_js %}
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+
+    {% include '@SpiritDevCIHubCore/Support/menu.html.twig' %}
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-sm-3 col-md-2 sidebar">
+                {% block cihub_sidebar %}{% endblock %}
+            </div>
+
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                {% block cihub_content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <script type="application/javascript">
+
+        var routes = {
+            filter: {
+                {#save: "{{ path('planning_app_filter_save', {}, true) }}"#}
+            }
+        };
+    </script>
+{% endblock %}
