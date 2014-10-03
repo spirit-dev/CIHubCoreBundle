@@ -8,12 +8,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ path('ci_hub_core_homepage') }}">CI - Hub</a>
+            <a class="navbar-brand" href="{{ path('spirit_dev_ci_hub_core_homepage') }}">CI - Hub</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 {% if is_granted('ROLE_USER') %}
-                    <li><a href="{{ path('ci_hub_core_homepage') }}">Home</a></li>
+                    <li><a href="{{ path('spirit_dev_ci_hub_core_homepage') }}">Home</a></li>
                 {% endif %}
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -27,13 +27,13 @@
                             <li><a href="#">Something else here</a></li>
                             <li class="divider"></li>
                             <li class="dropdown-header">Pre / Post managment</li>
-                            <li><a href="{{ path('ci_hub_post_homepage') }}">Post-CI</a></li>
+                            <li><a href="{{ path('spirit_dev_ci_hub_post_homepage') }}">Post-CI</a></li>
                         </ul>
                     </li>
                 {% endif %}
                 {% if is_granted('ROLE_ADMIN') %}
                     <li class="divider-vertical"></li>
-                    <li><a href="{{ path('ci_hub_post_homepage') }}">Post-CI</a></li>
+                    <li><a href="{{ path('spirit_dev_ci_hub_post_homepage') }}">Post-CI</a></li>
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
