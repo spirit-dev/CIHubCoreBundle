@@ -2,19 +2,23 @@
 
 namespace SpiritDev\Bundle\CIHubCoreBundle\DependencyInjection;
 
-class ConfigurationManager {
+class ConfigurationManager
+{
 
     private $templateName = null;
 
-    public function __construct($template) {
+    public function __construct($template)
+    {
         $this->templateName = $template;
     }
 
-    public function getTemplateName() {
+    public function getTemplateName()
+    {
         return $this->templateName;
     }
 
-    public function setTemplateName($templateName) {
+    public function setTemplateName($templateName)
+    {
         $this->templateName = $templateName;
     }
 } 

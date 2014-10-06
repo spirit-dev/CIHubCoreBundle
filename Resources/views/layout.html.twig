@@ -8,6 +8,7 @@
         {% stylesheets
         'bundles/spiritdevcihubcore/js/lib/bootstrap-3.2.0/css/bootstrap.min.css'
         'bundles/spiritdevcihubcore/js/lib/bootstrap-3.2.0/css/bootstrap-theme.min.css'
+        'bundles/spiritdevcihubcore/js/lib/GifLoader/src/css/gif-loader.min.css'
         filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}"/>
         {% endstylesheets %}
@@ -15,6 +16,7 @@
         {% stylesheets
         'bundles/spiritdevcihubcore/js/lib/bootstrap-3.2.0/css/bootstrap.css'
         'bundles/spiritdevcihubcore/js/lib/bootstrap-3.2.0/css/bootstrap-theme.css'
+        'bundles/spiritdevcihubcore/js/lib/GifLoader/src/css/gif-loader.css'
         'bundles/spiritdevcihubcore/css/common/main.css'
         filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}"/>
@@ -27,16 +29,19 @@
 
 {% block javascripts %}
     {% if app.environment == 'prod' %}
-        {# TODO Définir le contenu en prod #}
+        {# TODO Redéfinir le contenu en prod #}
         {% javascripts
         '@SpiritDevCIHubCoreBundle/Resources/public/js/lib/jquery-1.11.1/jquery-1.11.1.min.js'
-        '@SpiritDevCIHubCoreBundle/Resources/public/js/lib/bootstrap-3.2.0/js/bootstrap.min.js' %}
+        '@SpiritDevCIHubCoreBundle/Resources/public/js/lib/bootstrap-3.2.0/js/bootstrap.min.js'
+        '@SpiritDevCIHubCoreBundle/Resources/public/js/lib/GifLoader/src/js/gif_loader.min.js' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
     {% else %}
         {% javascripts
         '@SpiritDevCIHubCoreBundle/Resources/public/js/lib/jquery-1.11.1/jquery-1.11.1.js'
-        '@SpiritDevCIHubCoreBundle/Resources/public/js/lib/bootstrap-3.2.0/js/bootstrap.js' %}
+        '@SpiritDevCIHubCoreBundle/Resources/public/js/lib/bootstrap-3.2.0/js/bootstrap.js'
+        '@SpiritDevCIHubCoreBundle/Resources/public/js/lib/GifLoader/src/js/gif_loader.js'
+        '@SpiritDevCIHubCoreBundle/Resources/public/js/common/main.js' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
     {% endif %}

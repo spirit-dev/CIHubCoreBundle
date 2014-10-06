@@ -9,6 +9,13 @@ body {
 }
 
 /*
+ * Gif Loader override
+ */
+.gif_loader {
+    background: url("../../img/496.GIF") no-repeat center center transparent !important;
+}
+
+/*
  * Navbar top
  */
 .navbar .divider-vertical {
