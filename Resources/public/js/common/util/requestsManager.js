@@ -1,41 +1,59 @@
-
-function requestManager(options) {
+function requestManager(options, doneAction, failAction) {
 
     this.options = options;
+    this.doneAction = doneAction;
+    this.failAction = failAction;
     this.result = null;
+    this.finished = false;
     var that = this;
 
 
-    this.init = function() {
+    this.init = function () {
         // Pre treatment
         this.preRequest();
 
-        $.ajax(
-            that.options
-        ).done(function() {
-
-        })
-        .fail(function() {
-
-        })
-        .always(function() {
-            // Post treatment
-            that.postRequest();
-        });
-
+        if (this.preventErrors()) {
+            $.ajax(
+                that.options
+            )
+                .done(function (data) {
+                    that.result = {
+                        issue: 200,
+                        content: data
+                    }
+                    that.doneAction();
+                })
+                .fail(function () {
+                    that.failAction();
+                })
+                .always(function () {
+                    // Post treatment
+                    that.postRequest();
+                });
+        }
 
     }
 
-    this.preRequest = function() {
+    this.preventErrors = function() {
+        // TODO checker les erreurs possibles
+        return true;
+    }
+
+    this.preRequest = function () {
         mainLoader.init();
     }
 
-    this.postRequest = function() {
+    this.postRequest = function () {
         mainLoader.remove();
+        this.finished = true;
     }
 
-    this.getResult = function() {
+    this.getResult = function () {
         return this.result;
+    }
+    
+    this.finished = function() {
+        return this.finished;
     }
 
     this.init();
