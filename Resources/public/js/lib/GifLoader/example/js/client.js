@@ -1,8 +1,7 @@
-	
-	function execute() {
-		var al = new ajaxLoader(".ajaxLoader");
+function execute() {
+    var al = new ajaxLoader(".ajaxLoader");
 
-		setTimeout(function() {
-			al.remove();
-		}, 5000);
-	}
+    setTimeout(function () {
+        al.remove();
+    }, 5000);
+}

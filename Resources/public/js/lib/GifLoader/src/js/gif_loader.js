@@ -23,7 +23,6 @@ function gifLoader(el, options) {
     this.options = jQuery.extend(defaults, options);
 
     this.queue = 0;
-    var that = this;
 
     /**
      * Init function
@@ -62,20 +61,18 @@ function gifLoader(el, options) {
             );
         }
         this.queue++;
-        console.log("Start : "+that.queue);
     };
 
     /*
      * Loader remove function
      */
     this.remove = function (count) {
+        if (typeof count === 'undefined') {
+            this.queue--;
+        }
         var overlay = this.container.children(".gif_overlay");
-        if (overlay.length) {
-            if (typeof count === 'undefined') {
-                this.queue--;
-            }
-            console.log("End : "+this.queue);
-            if (this.queue === 0) {
+        if (this.queue === 0) {
+            if (overlay.length) {
                 overlay.fadeOut(this.options.classOveride, function () {
                     overlay.remove();
                 });

@@ -6,13 +6,11 @@ use CIHub\CoreBundle\Entity\Project;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class LoadProjectData implements FixtureInterface
-{
+class LoadProjectData implements FixtureInterface {
     /**
      * {@inheritDoc}
      */
-    public function load(ObjectManager $manager)
-    {
+    public function load(ObjectManager $manager) {
         $project1 = new Project();
         $project1->setName('Planning');
         $project1->setDescription('Main planification tools by CSP RSS');

@@ -68,9 +68,11 @@
     </div>
     <script type="application/javascript">
 
-        var routes = {
-            filter: {
-                {#save: "{{ path('planning_app_filter_save', {}, true) }}"#}
+        var ROUTES = {
+            post: {
+                difflist: {
+                    new: "{{ path('spiritdev_cihubpost_difflist_new', {}, true) }}"
+                }
             }
         };
     </script>

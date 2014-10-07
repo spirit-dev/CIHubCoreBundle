@@ -27,17 +27,21 @@
                             <li><a href="#">Something else here</a></li>
                             <li class="divider"></li>
                             <li class="dropdown-header">Pre / Post managment</li>
-                            <li><a href="{{ path('spirit_dev_ci_hub_post_homepage') }}">Post-CI</a></li>
+                            <li><a href="{{ path('spiritdev_cihubpost_post_index') }}">Post-CI</a></li>
                         </ul>
                     </li>
                 {% endif %}
                 {% if is_granted('ROLE_ADMIN') %}
                     <li class="divider-vertical"></li>
-                    <li><a href="{{ path('spirit_dev_ci_hub_post_homepage') }}">Post-CI</a></li>
+                    <li><a href="{{ path('spiritdev_cihubpost_post_index') }}">Post-CI</a></li>
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><div class="navbar-text"><div class="mainLoader" style="height: 32px;width: 32px; margin-top: -12px"></div></div></li>
+                <li>
+                    <div class="navbar-text">
+                        <div class="mainLoader" style="height: 32px;width: 32px; margin-top: -12px"></div>
+                    </div>
+                </li>
                 {% if is_granted('ROLE_USER') %}
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome {{ name }}</a></li>
                     <li><a href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-off"></span>

@@ -10,8 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="cihub_core_project")
  * @ORM\Entity
  */
-class Project
-{
+class Project {
     /**
      * @var integer
      *
@@ -58,8 +57,7 @@ class Project
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -69,8 +67,7 @@ class Project
      * @param string $name
      * @return Project
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -81,8 +78,7 @@ class Project
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -92,8 +88,7 @@ class Project
      * @param string $description
      * @return Project
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -104,8 +99,7 @@ class Project
      *
      * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -115,8 +109,7 @@ class Project
      * @param \DateTime $dateCreation
      * @return Project
      */
-    public function setDateCreation($dateCreation)
-    {
+    public function setDateCreation($dateCreation) {
         $this->dateCreation = $dateCreation;
 
         return $this;
@@ -127,8 +120,7 @@ class Project
      *
      * @return \DateTime
      */
-    public function getDateCreation()
-    {
+    public function getDateCreation() {
         return $this->dateCreation;
     }
 
@@ -138,8 +130,7 @@ class Project
      * @param \CIHub\UserBundle\Entity\User $leader
      * @return Project
      */
-    public function setLeader(\CIHub\UserBundle\Entity\User $leader = null)
-    {
+    public function setLeader(\CIHub\UserBundle\Entity\User $leader = null) {
         $this->leader = $leader;
 
         return $this;
@@ -150,8 +141,7 @@ class Project
      *
      * @return \CIHub\UserBundle\Entity\User
      */
-    public function getLeader()
-    {
+    public function getLeader() {
         return $this->leader;
     }
 }
