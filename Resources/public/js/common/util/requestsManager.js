@@ -23,7 +23,15 @@ function requestManager(options, doneAction, failAction) {
                     }
                     that.doneAction();
                 })
-                .fail(function () {
+                .fail(function (xhr, ajaxOptions, thrownErorr) {
+                    switch (xhr.status) {
+                        case 406:
+                            console.log("406 Request error : "+xhr.status);
+                            break
+                        case 404:
+                            console.log("Server not recheable");
+                            break
+                    }
                     that.failAction();
                 })
                 .always(function () {
